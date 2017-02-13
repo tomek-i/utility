@@ -46,7 +46,8 @@
     <Compile Include="StringCipher.cs" />
     <Compile Include="ValidationFramework\IValidator.cs" />
     <Compile Include="ValidationFramework\ObjectFactory.cs" />
-    <Compile Include="ValidationFramework\RulesEngine\Class1.cs" />
+    <Compile Include="ValidationFramework\RulesEngine\Rule.cs" />
+    <Compile Include="ValidationFramework\RulesEngine\PrecompiledRules.cs" />
     <Compile Include="ValidationFramework\ValidationFactory.cs" />
     <Compile Include="ValidationFramework\ValidationMessage.cs" />
     <Compile Include="ValidationFramework\ValidationResult.cs" />
