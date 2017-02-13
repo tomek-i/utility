@@ -39,9 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PredicateBuilder.cs" />
     <Compile Include="SingleInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringCipher.cs" />
+    <Compile Include="ValidationFramework\IValidator.cs" />
+    <Compile Include="ValidationFramework\ObjectFactory.cs" />
+    <Compile Include="ValidationFramework\RulesEngine\Class1.cs" />
+    <Compile Include="ValidationFramework\ValidationFactory.cs" />
+    <Compile Include="ValidationFramework\ValidationMessage.cs" />
+    <Compile Include="ValidationFramework\ValidationResult.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

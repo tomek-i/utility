@@ -7,7 +7,6 @@ using System.Threading;
 
 namespace TIUtilities.Logic
 {
-
     public class SingleInstance : IDisposable
     {
         public SingleInstance(TimeSpan timeOut)
