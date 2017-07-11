@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TIUtilities.Logic.ValidationFramework
+namespace TIUtilities.Logic
 {
     public static class ObjectFactory
     {
@@ -24,6 +24,11 @@ namespace TIUtilities.Logic.ValidationFramework
         public static T GetInstance<T>() where T : class
         {
             return GetInstance(typeof (T)) as T;
+        }
+
+        public static void Clear()
+        {
+            Register.Clear();
         }
     }
 }

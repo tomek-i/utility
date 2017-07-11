@@ -6,14 +6,6 @@ namespace TIUtilities.UnitTests
     public class CompressUnitTests
     {
 
-        [Test]
-        public void UnitAtTest_Conditions_ExpectedBehaviour()
-        {
-            //ARRANGE
-
-            //ACT
-            //ASSERT
-            Assert.Fail();
-        }
+      
     }
 }
