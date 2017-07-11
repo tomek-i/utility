@@ -144,5 +144,7 @@ namespace TIUtilities.Logic
                 CustomSort(propertyName, direction);
             }
         }
+        #endregion
     }
-}
+
+    }
