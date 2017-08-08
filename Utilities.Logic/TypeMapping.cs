@@ -27,10 +27,12 @@ namespace TIUtilities.Logic
             return mappings.ContainsKey(t) ? mappings[t]  :null;
         }
 
-        public static T Get<T>() where T : class
+        public static TRet Get<T,TRet>() 
+            where T : class 
+            where TRet:class
         {
             var t = typeof(T);
-            return Get(t) as T;
+            return Get(t) as TRet;
         }
 
         public static void Clear()
