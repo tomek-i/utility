@@ -6,6 +6,7 @@ using System.Text;
 
 namespace TIUtilities.Logic
 {
+
     public static class StringCipher
     {
         // This constant is used to determine the keysize of the encryption algorithm in bits.

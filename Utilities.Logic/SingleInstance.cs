@@ -7,31 +7,30 @@ using System.Threading;
 
 namespace TIUtilities.Logic
 {
+
     public class SingleInstance : IDisposable
     {
         public SingleInstance(TimeSpan timeOut)
-            : this(timeOut,
-                Assembly.GetExecutingAssembly())
+            : this(timeOut,Assembly.GetExecutingAssembly(),null)
         {
         }
 
         public SingleInstance(int timeoutMilliseconds)
             : this(TimeSpan.FromMilliseconds(timeoutMilliseconds),
-                Assembly.GetExecutingAssembly())
+                Assembly.GetExecutingAssembly(),null)
         {
         }
 
         public SingleInstance(int timeoutMilliseconds, Assembly assembly)
-            : this(TimeSpan.FromMilliseconds(timeoutMilliseconds),
-                assembly)
+            : this(TimeSpan.FromMilliseconds(timeoutMilliseconds),assembly,null)
         {
         }
 
-        public SingleInstance(TimeSpan timeOut, Assembly executingAssembly)
+        public SingleInstance(TimeSpan timeOut, Assembly executingAssembly, string version)
         {
             _executingAssembly = executingAssembly;
 
-            InitMutex();
+            InitMutex(version);
             try
             {
                 HasHandle = _mutex.WaitOne(timeOut < TimeSpan.Zero ? Timeout.InfiniteTimeSpan : timeOut, false);
@@ -53,11 +52,9 @@ namespace TIUtilities.Logic
             _mutex.Dispose();
         }
 
-        private void InitMutex()
+        private void InitMutex(string version)
         {
-            var appGuid =
-                ((GuidAttribute) _executingAssembly.GetCustomAttributes(typeof (GuidAttribute), false).GetValue(0))
-                    .Value;
+            var appGuid = ((GuidAttribute) _executingAssembly.GetCustomAttributes(typeof (GuidAttribute), false).GetValue(0)).Value + version;
             var mutexId = $"Global\\{{{appGuid}}}";
             _mutex = new Mutex(false, mutexId);
 
