@@ -18,13 +18,13 @@ namespace TIUtilities.UnitTests
         {
             //ARRANGE
             string theInstanceToReturn = "test";
-          
-
-            //ACT
             TypeMapping.Map<object>(theInstanceToReturn);
 
+            //ACT
+            var result = TypeMapping.Get<object, object>();
             //ASSERT
-            Assert.IsNotNull(TypeMapping.Get<object>());
+
+            Assert.That(result, Is.Not.Null);
         }
 
         [Test]
@@ -33,12 +33,14 @@ namespace TIUtilities.UnitTests
             //ARRANGE
             string theInstanceToReturn = "test";
             Type theTypeToRegister = typeof(object);
-
-            //ACT
             TypeMapping.Map(theTypeToRegister, theInstanceToReturn);
 
+            //ACT
+            var result = TypeMapping.Get(theTypeToRegister);
+
             //ASSERT
-            Assert.IsNotNull(TypeMapping.Get(theTypeToRegister));
+            Assert.That(result, Is.Not.Null);
+
         }
         [Test]
         public void RegisterTypeT_OfAlreadyRegistered_Throws()
@@ -46,13 +48,16 @@ namespace TIUtilities.UnitTests
             //ARRANGE
             string theInstanceToRegister = "test";
             string theInstanceToReturn = "new";
-           
+
 
             //ACT
             TypeMapping.Map<object>(theInstanceToRegister);
 
             //ASSERT
-            Assert.Throws<ArgumentException>(() => TypeMapping.Map<object>(theInstanceToReturn));
+            Assert.That(() =>
+            {
+                TypeMapping.Map<object>(theInstanceToReturn);
+            }, Throws.ArgumentException);
         }
         [Test]
         public void RegisterType_OfAlreadyRegistered_Throws()
@@ -66,33 +71,40 @@ namespace TIUtilities.UnitTests
             TypeMapping.Map(theTypeToRegister, theInstanceToRegister);
 
             //ASSERT
-            Assert.Throws<ArgumentException>(() => TypeMapping.Map(theTypeToRegister, theInstanceToReturn));
+            Assert.That(() =>
+            {
+                TypeMapping.Map(theTypeToRegister, theInstanceToReturn);
+            }, Throws.ArgumentException);
+
+
         }
         [Test]
         public void GetInstance_OfAlreadyRegisteredType_ReturnsTheRegisteredInstance()
         {
             //ARRANGE
             string theInstanceToReturn = "test";
-            Type theTypeToRegister = typeof (object);
+            Type theTypeToRegister = typeof(object);
 
             TypeMapping.Map(theTypeToRegister, theInstanceToReturn);
             //ACT
-            var result = TypeMapping.Get(typeof (object));
+            var result = TypeMapping.Get(typeof(object));
             //ASSERT
-            Assert.AreSame(theInstanceToReturn, result);
+            Assert.That(result, Is.SameAs(theInstanceToReturn));
         }
         [Test]
         public void GetInstanceT_OfAlreadyRegisteredType_ReturnsTheRegisteredInstance()
         {
             //ARRANGE
             string theInstanceToReturn = "test";
-          
+
 
             TypeMapping.Map<object>(theInstanceToReturn);
             //ACT
-            var result = TypeMapping.Get<object>();
+            var result = TypeMapping.Get<object, object>();
             //ASSERT
-            Assert.AreSame(theInstanceToReturn, result);
+
+
+            Assert.That(result, Is.SameAs(theInstanceToReturn));
         }
         [Test]
         public void GetInstance_OfNotARegisteredType_ReturnsNull()
@@ -105,20 +117,47 @@ namespace TIUtilities.UnitTests
             //ACT
             var result = TypeMapping.Get(typeof(int));
             //ASSERT
-            Assert.IsNull(result);
+            Assert.That(result, Is.Null);
         }
         [Test]
         public void GetInstanceT_OfNotARegisteredType_ReturnsNull()
         {
             //ARRANGE
             string theInstanceToReturn = "test";
-           
+
 
             TypeMapping.Map<object>(theInstanceToReturn);
             //ACT
             var result = TypeMapping.Get<string>();
             //ASSERT
-            Assert.IsNull(result);
+            Assert.That(result, Is.Null);
+        }
+
+
+        [Test]
+        public void GetInstanceT_OfRegisteredType_ReturnsValue()
+        {
+            //ARRANGE
+            string theInstanceToReturn = "test";
+
+            TypeMapping.Map<string>(theInstanceToReturn);
+
+            //ACT
+            var result = TypeMapping.Get<string>();
+
+            //ASSERT
+            Assert.That(result, Is.Not.Null);
+
+
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(result, Is.EqualTo("test"));
+                Assert.That(result, Is.SameAs(theInstanceToReturn), "Not same instance");
+            });
+
+
+
         }
     }
 }

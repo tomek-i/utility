@@ -20,6 +20,7 @@ namespace TIUtilities.Logic
            }
         public static Control Align(this Control control, Control container, AlignMode mode)
         {
+            
             var width = control.Width;
             var ehight = control.Height;
                 var midW = width / 2;
