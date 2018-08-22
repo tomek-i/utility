@@ -2,9 +2,9 @@
 using System.Security.Principal;
 using System.Threading;
 using NUnit.Framework;
-using TIUtilities.Logic;
+using TI.Utilities;
 
-namespace TIUtilities.UnitTests
+namespace TI.Utilities.UnitTests
 {
     [TestFixture]
     public class SingleInstanceUnitTests
@@ -29,10 +29,7 @@ namespace TIUtilities.UnitTests
                        
             //ACT
             var result = new ThreadStart(() => {
-
-               
                 new SingleInstance(300);
-
             });
 
             //ASSERT
@@ -40,8 +37,6 @@ namespace TIUtilities.UnitTests
             Assert.That(() =>
             {
                 result.Invoke();
-
-
             }, Throws.InstanceOf<TimeoutException>());
 
 

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace TIUtilities.UnitTests
+namespace TI.Utilities.UnitTests
 {
     [TestFixture]
     public class PredicateBuilderUnitTests

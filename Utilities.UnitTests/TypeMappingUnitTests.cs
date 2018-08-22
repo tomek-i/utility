@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using TIUtilities.Logic;
+using TI.Utilities;
 
 namespace TIUtilities.UnitTests
 {
