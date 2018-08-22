@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Comparers
 {
     public class FuncEqualityComparer<T>:IEqualityComparer<T>
     {

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Extensions
 {
     public static class TypeExtensions
     {

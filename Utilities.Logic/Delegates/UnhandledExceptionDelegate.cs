@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TI.Utilities.Logic.Delegates
+namespace TI.Utilities.Delegates
 {
     public delegate void UnhandledExceptionHandler(StringBuilder errorMessage);
 }

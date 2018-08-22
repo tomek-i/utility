@@ -2,7 +2,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities
 {
     public static class Compress
     {

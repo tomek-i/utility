@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Comparers
 {
     public static class Equality<T>
     {
@@ -20,8 +20,7 @@ namespace TIUtilities.Logic
 
             public KeyEqualityComparer(Func<T,V> keySelector,IEqualityComparer<V> comparer)
             {
-                if (keySelector == null) throw new ArgumentNullException(nameof(keySelector));
-                this.keySelector = keySelector;
+                this.keySelector = keySelector ?? throw new ArgumentNullException(nameof(keySelector));
                 this.comparer = comparer ?? EqualityComparer<V>.Default;
             }
             public bool Equals(T left, T right)

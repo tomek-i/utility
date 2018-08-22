@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Logic", "Utilities.Logic\Utilities.Logic.csproj", "{17BF99D1-DBFD-475E-A4B6-8F23A975DFAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.UnitTests", "Utilities.UnitTests\Utilities.UnitTests.csproj", "{DEE559D4-4DC8-410F-9AC3-6377EA06606D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{288F5276-AB5A-45C0-A0BA-1AE97A9A12D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +21,11 @@ Global
 		{DEE559D4-4DC8-410F-9AC3-6377EA06606D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE559D4-4DC8-410F-9AC3-6377EA06606D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE559D4-4DC8-410F-9AC3-6377EA06606D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{288F5276-AB5A-45C0-A0BA-1AE97A9A12D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{288F5276-AB5A-45C0-A0BA-1AE97A9A12D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{288F5276-AB5A-45C0-A0BA-1AE97A9A12D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{288F5276-AB5A-45C0-A0BA-1AE97A9A12D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6936442A-6EF7-4FD2-8DB1-FA1EEF672711}
 	EndGlobalSection
 EndGlobal

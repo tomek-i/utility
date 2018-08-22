@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Extensions
 {
     public static class TimeSpanExtensions
         {

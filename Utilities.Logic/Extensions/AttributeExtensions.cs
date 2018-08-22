@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Extensions
 {
     public static class AttributeExtensions
     {

@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities
 {
 
     
     public static class TypeMapping
     {
-        private static readonly Dictionary<Type, object> mappings;
+        private static readonly IDictionary<Type, object> mappings;
 
         static TypeMapping()
         {

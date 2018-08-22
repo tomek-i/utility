@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Threading;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Collections
 {
     public class ObservableCollectionEx<T> : ObservableCollection<T>
     {

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities
 {
 
     public static class PredicateBuilder

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities
 {
     public abstract class PropertyChangedNotificationClass:INotifyPropertyChanged
     {

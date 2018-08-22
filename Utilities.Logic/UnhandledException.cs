@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using TI.Utilities.Logic.Delegates;
+using TI.Utilities.Delegates;
 
-namespace TI.Utilities.Logic
+namespace TI.Utilities
 {
 
     public static class UnhandledException
@@ -21,13 +21,10 @@ namespace TI.Utilities.Logic
 
         public static void Register(UnhandledExceptionHandler eventHandler)
         {
-            if (eventHandler == null)
-                throw new NullReferenceException("You have to specify an event handler.");
-
             if (UnhandledExceptionEvent != null)
                 throw new InvalidOperationException("You can only specify one Unhandled Event Handler.");
 
-            UnhandledExceptionEvent = eventHandler;
+            UnhandledExceptionEvent = eventHandler ?? throw new NullReferenceException("You have to specify an event handler.");
 
             AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
             {

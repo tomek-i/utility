@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Comparers
 {
     /// <summary>
     /// Customer Sort Comparer.

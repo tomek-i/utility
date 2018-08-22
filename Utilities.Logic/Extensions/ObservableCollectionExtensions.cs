@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities.Extensions
 {
 
     public static class ObservableCollectionExtensions

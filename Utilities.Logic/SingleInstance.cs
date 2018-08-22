@@ -8,7 +8,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TIUtilities.Logic
+namespace TI.Utilities
 {
 
     internal class NativeMethods
@@ -104,15 +104,7 @@ namespace TIUtilities.Logic
                             flash(handle, true);
                         });
 
-
                         Thread.Sleep(3000);
-
-
-
-
-
-
-
 
                     }
                     //bring existing window to front
