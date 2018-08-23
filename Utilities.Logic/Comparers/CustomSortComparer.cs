@@ -8,6 +8,7 @@ using TI.Utilities.Extensions;
 
 namespace TI.Utilities.Comparers
 {
+
     /// <summary>
     /// Customer Sort Comparer.
     /// Original Source:
@@ -47,6 +48,7 @@ namespace TI.Utilities.Comparers
             // Sort comparer
             var sortComparer = new InternalSorting(propertyName, direction);
 
+            
             // Sort
             var sortedCollection = targetCollection.OrderBy(x => x, sortComparer).ToList();
 

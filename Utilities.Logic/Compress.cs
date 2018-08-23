@@ -4,6 +4,7 @@ using System.Text;
 
 namespace TI.Utilities
 {
+
     public static class Compress
     {
         private static void CopyTo(Stream src, Stream dest)

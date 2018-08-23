@@ -2,6 +2,7 @@
 
 namespace TI.Utilities.Extensions
 {
+
     public static class MathExtensions
     {
         ////TODO: need to use compare to and the result value of -1 0 +1

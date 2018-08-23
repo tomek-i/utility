@@ -12,6 +12,7 @@ namespace TI.Utilities
         {
             return GetTypesWithInterface<T>(AppDomain.CurrentDomain.GetAssemblies());
         }
+
         public static IEnumerable<Type> GetTypesWithInterface<T>(Assembly assembly)
         {
             Assembly[] assemblies = { assembly };

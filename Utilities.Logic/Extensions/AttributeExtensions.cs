@@ -5,6 +5,7 @@ using System.Reflection;
 
 namespace TI.Utilities.Extensions
 {
+
     public static class AttributeExtensions
     {
 

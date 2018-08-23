@@ -2,6 +2,7 @@
 
 namespace TI.Utilities.Extensions
 {
+
     public static class TimeSpanExtensions
         {
         public static double ToDouble(this TimeSpan time)

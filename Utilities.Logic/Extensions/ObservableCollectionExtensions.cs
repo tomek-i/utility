@@ -30,7 +30,7 @@ namespace TI.Utilities.Extensions
         {
             // Evaluate
             if (collection == null) return;
-
+            
             // Make a list
             var list = collection.ToList();
 
