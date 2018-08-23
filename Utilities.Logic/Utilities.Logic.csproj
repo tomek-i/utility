@@ -199,16 +199,9 @@
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Weighted Randomizer\DynamicWeightedRandomizer.cs" />
     <Compile Include="Weighted Randomizer\IWeightedRandomizer.cs" />
-    <Compile Include="Weighted Randomizer\Properties\AssemblyInfo.cs" />
     <Compile Include="Weighted Randomizer\RandomExtensionMethods.cs" />
     <Compile Include="Weighted Randomizer\StaticWeightedRandomizer.cs" />
     <Compile Include="Weighted Randomizer\ThreadAwareRandom.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Weighted Randomizer\Weighted Randomizer.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Weighted Randomizer\Weighted Randomizer.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
