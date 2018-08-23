@@ -119,6 +119,7 @@
     <Compile Include="Examples\Sorting\ShakerSorterExamples.cs" />
     <Compile Include="Examples\Sorting\ShellSorterExamples.cs" />
     <Compile Include="Examples\Sorting\SorterExamples.cs" />
+    <Compile Include="RepositoryTests.cs" />
     <Compile Include="SingleInstanceUnitTests.cs" />
     <Compile Include="CompressUnitTests.cs" />
     <Compile Include="Sort.cs" />
@@ -878,10 +879,16 @@
     <Compile Include="PredicateBuilderUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringCipherUnitTests.cs" />
+    <Compile Include="Weighted Randomizer Tests\DynamicWeightedRandomizerTests.cs" />
+    <Compile Include="Weighted Randomizer Tests\Properties\AssemblyInfo.cs" />
+    <Compile Include="Weighted Randomizer Tests\SpeedTests.cs" />
+    <Compile Include="Weighted Randomizer Tests\StaticWeightedRandomizerTests.cs" />
+    <Compile Include="Weighted Randomizer Tests\WeightedRandomizerTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Weighted Randomizer Tests\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -898,6 +905,7 @@
   <ItemGroup>
     <Content Include="teststs\TestObjects\Artifacts\SampleProjects\NGenerics.csproj" />
     <Content Include="teststs\TestObjects\Artifacts\SampleProjects\NGenerics.Silverlight.csproj" />
+    <Content Include="Weighted Randomizer Tests\Weighted Randomizer Tests.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
