@@ -6,11 +6,14 @@ namespace TI.Utilities
     /// <summary>
     /// Utility class to map types to physical objects
     /// </summary>
-    public static class TypeMapping
+    public class TypeMapping
     {
-        private static readonly IDictionary<Type, object> mappings;
+        private readonly IDictionary<Type, object> mappings;
+        private static TypeMapping _instance;
 
-        static TypeMapping()
+        public static TypeMapping Instance { get { return _instance ?? (_instance = new TypeMapping()); } }
+
+        public TypeMapping()
         {
             mappings = new Dictionary<Type, object>();
         }
@@ -19,23 +22,31 @@ namespace TI.Utilities
         /// Mapps T and uses activator to crteate instance of T
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static void Map<T>()
+        public void Map<T>()
         {
-            mappings.Add(typeof(T), Activator.CreateInstance<T>());
+            Map(typeof(T));
         }
-        public static void Map<T>(object obj)
+        public void Map<T>(object obj)
         {
             Map(typeof(T), obj);
         }
-        public static void Map(Type type, object obj)
+        public void Map(Type type)
         {
-            mappings.Add(type, obj);
+            Map(type, Activator.CreateInstance(type));
         }
-        public static object Get(Type t)
+        public void Map(Type type, object obj)
+        {
+            if (mappings.ContainsKey(type))
+                mappings[type] = obj;
+            else
+                mappings.Add(type, obj);
+        }
+
+        public object Get(Type t)
         {
             return mappings.ContainsKey(t) ? mappings[t] : null;
         }
-        public static void Remove(Type type)
+        public void Remove(Type type)
         {
 
             if (mappings.ContainsKey(type))
@@ -51,7 +62,7 @@ namespace TI.Utilities
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TReturn"></typeparam>
         /// <returns></returns>
-        public static TReturn Get<T, TReturn>()
+        public TReturn Get<T, TReturn>()
            where T : class
            where TReturn : class
         {
@@ -62,16 +73,16 @@ namespace TI.Utilities
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>the value type as T</returns>
-        public static T Get<T>() where T : class
+        public T Get<T>() where T : class
         {
             return Get(typeof(T)) as T;
         }
-        public static void Remove<T>()
+        public void Remove<T>()
         {
             Remove(typeof(T));
         }
 
-        public static void Clear()
+        public void Clear()
         {
             mappings.Clear();
         }
