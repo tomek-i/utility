@@ -120,6 +120,7 @@
     <Compile Include="Examples\Sorting\ShellSorterExamples.cs" />
     <Compile Include="Examples\Sorting\SorterExamples.cs" />
     <Compile Include="RepositoryTests.cs" />
+    <Compile Include="RepositoryUnitTest.cs" />
     <Compile Include="SingleInstanceUnitTests.cs" />
     <Compile Include="CompressUnitTests.cs" />
     <Compile Include="Sort.cs" />

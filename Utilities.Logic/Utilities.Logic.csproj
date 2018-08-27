@@ -94,9 +94,14 @@
     <Compile Include="DataStructure\General\SkipListNode.cs" />
     <Compile Include="DataStructure\General\SortedList.cs" />
     <Compile Include="DataStructure\General\Vertex.cs" />
-    <Compile Include="Patterns\IActiveRepository.cs" />
-    <Compile Include="Patterns\IDataRepository.cs" />
-    <Compile Include="Patterns\IRepository.cs" />
+    <Compile Include="Patterns\Query\ExpressionBuilder.cs" />
+    <Compile Include="Patterns\Query\ExpressionExtensions.cs" />
+    <Compile Include="Patterns\Query\IQuery.cs" />
+    <Compile Include="Patterns\Query\OperationType.cs" />
+    <Compile Include="Patterns\Query\Query.cs" />
+    <Compile Include="Patterns\Repository\IActiveRepository.cs" />
+    <Compile Include="Patterns\Repository\IDataRepository.cs" />
+    <Compile Include="Patterns\Repository\IRepository.cs" />
     <Compile Include="DataStructure\Mathematical\CholeskyDecomposition.cs" />
     <Compile Include="DataStructure\Mathematical\ComplexNumber.cs" />
     <Compile Include="DataStructure\Mathematical\IDecomposition.cs" />
@@ -114,7 +119,7 @@
     <Compile Include="DataStructure\Mathematical\VectorBase.Operators.cs" />
     <Compile Include="DataStructure\Mathematical\VectorN.cs" />
     <Compile Include="DataStructure\Mathematical\VectorN.Operators.cs" />
-    <Compile Include="Patterns\Repository.cs" />
+    <Compile Include="Patterns\Repository\Repository.cs" />
     <Compile Include="Extensions\DoubleExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />

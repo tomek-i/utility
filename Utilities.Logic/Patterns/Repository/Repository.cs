@@ -16,7 +16,6 @@ namespace TI.Repository
             if (IsDisposed)
                 throw new ObjectDisposedException("The object has been disposed.");
 
-
             IsDisposed = true;
         }
 
@@ -26,17 +25,17 @@ namespace TI.Repository
 
         public abstract T First();
         public abstract T Last();
-        public abstract void Add(T o);
-        public abstract void AddRange(IEnumerable<T> objs);
-        public abstract void Remove(T obj);
-        public abstract void RemoveRange(IEnumerable<T> objs);
-        public abstract void RemoveAt(int index);
-        public abstract void Clear();
+        // public abstract void Add(T o);
+        // public abstract void AddRange(IEnumerable<T> objs);
+        // public abstract void Remove(T obj);
+        // public abstract void RemoveRange(IEnumerable<T> objs);
+        // public abstract void RemoveAt(int index);
+        // public abstract void Clear();
         public abstract bool Contains(T item);
         public abstract IReadOnlyCollection<T> All();
         public abstract IEnumerable<T> Where(Expression<Func<T, bool>> predicate);
         public abstract IEnumerable<T> Where(Func<T, bool> predicate);
-
+        //TODO: query??
         #endregion
     }
 }
