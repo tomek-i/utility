@@ -94,6 +94,8 @@
     <Compile Include="DataStructure\General\SkipListNode.cs" />
     <Compile Include="DataStructure\General\SortedList.cs" />
     <Compile Include="DataStructure\General\Vertex.cs" />
+    <Compile Include="Patterns\TypeMappers\GenericMapper.cs" />
+    <Compile Include="Patterns\TypeMappers\IGenericMapper.cs" />
     <Compile Include="Patterns\Query\ExpressionBuilder.cs" />
     <Compile Include="Patterns\Query\ExpressionExtensions.cs" />
     <Compile Include="Patterns\Query\IQuery.cs" />
@@ -199,7 +201,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructure\Collections\SortableBindingList.cs" />
     <Compile Include="Encryption\StringCipher.cs" />
-    <Compile Include="TypeMapping.cs" />
+    <Compile Include="Patterns\TypeMappers\TypeMapping.cs" />
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Weighted Randomizer\DynamicWeightedRandomizer.cs" />

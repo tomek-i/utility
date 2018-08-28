@@ -1,21 +1,20 @@
 using System;
-using System.Collections.Generic;
 
 namespace TI.Utilities
 {
+
     /// <summary>
     /// Utility class to map types to physical objects
     /// </summary>
-    public class TypeMapping
+    public class TypeMapping : GenericMapper<Type, object>
     {
-        private readonly IDictionary<Type, object> mappings;
+        
         private static TypeMapping _instance;
 
         public static TypeMapping Instance { get { return _instance ?? (_instance = new TypeMapping()); } }
 
-        public TypeMapping()
+        public TypeMapping():base()
         {
-            mappings = new Dictionary<Type, object>();
         }
 
         /// <summary>
@@ -34,26 +33,8 @@ namespace TI.Utilities
         {
             Map(type, Activator.CreateInstance(type));
         }
-        public void Map(Type type, object obj)
-        {
-            if (mappings.ContainsKey(type))
-                mappings[type] = obj;
-            else
-                mappings.Add(type, obj);
-        }
-
-        public object Get(Type t)
-        {
-            return mappings.ContainsKey(t) ? mappings[t] : null;
-        }
-        public void Remove(Type type)
-        {
-
-            if (mappings.ContainsKey(type))
-            {
-                mappings.Remove(type);
-            }
-        }
+           
+       
 
 
         /// <summary>
@@ -82,9 +63,6 @@ namespace TI.Utilities
             Remove(typeof(T));
         }
 
-        public void Clear()
-        {
-            mappings.Clear();
-        }
+       
     }
 }
