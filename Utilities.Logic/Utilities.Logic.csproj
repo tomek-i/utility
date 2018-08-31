@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Algorithms\GraphAlgorithms.cs" />
     <Compile Include="Algorithms\MathAlgorithms.cs" />
+    <Compile Include="Algorithms\Randomizers\MersenneTwister.cs" />
+    <Compile Include="Algorithms\Randomizers\Noise.cs" />
     <Compile Include="Algorithms\VertexInfo.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Comparers\AssociationKeyComparer.cs" />
@@ -94,6 +96,8 @@
     <Compile Include="DataStructure\General\SkipListNode.cs" />
     <Compile Include="DataStructure\General\SortedList.cs" />
     <Compile Include="DataStructure\General\Vertex.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Patterns\Singleton\Singleton.cs" />
     <Compile Include="Patterns\TypeMappers\GenericMapper.cs" />
     <Compile Include="Patterns\TypeMappers\IGenericMapper.cs" />
     <Compile Include="Patterns\Query\ExpressionBuilder.cs" />
@@ -204,11 +208,11 @@
     <Compile Include="Patterns\TypeMappers\TypeMapping.cs" />
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
-    <Compile Include="Weighted Randomizer\DynamicWeightedRandomizer.cs" />
-    <Compile Include="Weighted Randomizer\IWeightedRandomizer.cs" />
-    <Compile Include="Weighted Randomizer\RandomExtensionMethods.cs" />
-    <Compile Include="Weighted Randomizer\StaticWeightedRandomizer.cs" />
-    <Compile Include="Weighted Randomizer\ThreadAwareRandom.cs" />
+    <Compile Include="Algorithms\Randomizers\DynamicWeightedRandomizer.cs" />
+    <Compile Include="Algorithms\Randomizers\IWeightedRandomizer.cs" />
+    <Compile Include="Algorithms\Randomizers\RandomExtensionMethods.cs" />
+    <Compile Include="Algorithms\Randomizers\StaticWeightedRandomizer.cs" />
+    <Compile Include="Algorithms\Randomizers\ThreadAwareRandom.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

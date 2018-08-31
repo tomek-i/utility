@@ -47,7 +47,7 @@ namespace Weighted_Randomizer
         /// <summary>
         /// Create a new StaticWeightedRandomizer with the given seed
         /// </summary>
-        public StaticWeightedRandomizer(int seed) : this(new ThreadAwareRandom(seed)) {}
+        public StaticWeightedRandomizer(int seed) : this(new ThreadAwareRandom(seed)) { }
 
         /// <summary>
         /// A quick hack that allows me to share code between the two constructors but still set
@@ -97,7 +97,7 @@ namespace Weighted_Randomizer
         public void CopyTo(TKey[] array, int startingIndex)
         {
             int currentIndex = startingIndex;
-            foreach(TKey key in this)
+            foreach (TKey key in this)
             {
                 array[currentIndex] = key;
                 currentIndex++;
@@ -125,7 +125,7 @@ namespace Weighted_Randomizer
         /// </summary>
         public void Add(TKey key, int weight)
         {
-            if(weight < 0)
+            if (weight < 0)
             {
                 throw new ArgumentOutOfRangeException("weight", weight, "Cannot add a key with weight < 0!");
             }
@@ -141,8 +141,7 @@ namespace Weighted_Randomizer
         /// <returns>Returns true if the item was successfully deleted, or false if it was not found</returns>
         public bool Remove(TKey key)
         {
-            int weight;
-            if(!_weights.TryGetValue(key, out weight))
+            if (!_weights.TryGetValue(key, out int weight))
             {
                 return false;
             }
@@ -183,7 +182,7 @@ namespace Weighted_Randomizer
         {
             VerifyHaveItemsToChooseFrom();
 
-            if(_listNeedsRebuilding)
+            if (_listNeedsRebuilding)
             {
                 RebuildProbabilityList();
             }
@@ -192,7 +191,7 @@ namespace Weighted_Randomizer
             int randomIndex = _random.Next(_probabilityBoxes.Count);
             long randomNumBalls = _random.NextLong(_heightPerBox) + 1;
 
-            if(randomNumBalls <= _probabilityBoxes[randomIndex].NumBallsInBox)
+            if (randomNumBalls <= _probabilityBoxes[randomIndex].NumBallsInBox)
             {
                 return _probabilityBoxes[randomIndex].Key;
             }
@@ -233,14 +232,14 @@ namespace Weighted_Randomizer
             _probabilityBoxes.Clear();
             foreach (TKey item in _weights.Keys)
             {
-                long newWeight = _weights[item]*weightMultiplier;
+                long newWeight = _weights[item] * weightMultiplier;
                 if (newWeight > _heightPerBox)
                 {
-                    largeStack.Push(new KeyBallsPair {Key = item, NumBalls = newWeight});
+                    largeStack.Push(new KeyBallsPair { Key = item, NumBalls = newWeight });
                 }
                 else
                 {
-                    smallStack.Push(new KeyBallsPair {Key = item, NumBalls = newWeight});
+                    smallStack.Push(new KeyBallsPair { Key = item, NumBalls = newWeight });
                 }
             }
         }
@@ -284,10 +283,10 @@ namespace Weighted_Randomizer
 
         private static long GreatestCommonDenominator(long a, long b)
         {
-            while(b > 0)
+            while (b > 0)
             {
                 long remainder = a % b;
-                if(remainder == 0)
+                if (remainder == 0)
                     return b;
                 a = b;
                 b = remainder;
@@ -344,8 +343,7 @@ namespace Weighted_Randomizer
             if (key == null)
                 throw new ArgumentNullException("key", "key cannot be null");
 
-            int weight;
-            if(!_weights.TryGetValue(key, out weight))
+            if (!_weights.TryGetValue(key, out int weight))
                 throw new KeyNotFoundException("Key not found in StaticWeightedRandomizer: " + key);
 
             return weight;
@@ -362,7 +360,7 @@ namespace Weighted_Randomizer
                 throw new ArgumentOutOfRangeException("weight", weight, "Cannot add a weight with value < 0");
             }
 
-            if(Contains(key))
+            if (Contains(key))
             {
                 TotalWeight += (weight - _weights[key]);
                 _weights[key] = weight;
