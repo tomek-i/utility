@@ -37,5 +37,28 @@ namespace TI.Utilities.Extensions
         {
             return dt.AddDays(1);
         }
+
+        public static DateTime Midnight(this DateTime dt)
+        {
+            return WithTimeMin(dt);
+        }
+        public static DateTime Midday(this DateTime dt)
+        {
+            return WithTime(dt, 12, 0, 0, 0);
+        }
+
+        public static DateTime WithTime(this DateTime dt, int hour, int minute, int second, int ms=0)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, hour, minute, second, ms);
+        }
+
+        public static DateTime WithTimeMax(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 59, 999);
+        }
+        public static DateTime WithTimeMin(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0);
+        }
     }
 }

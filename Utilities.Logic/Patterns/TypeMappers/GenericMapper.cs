@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TI.Utilities
 {
-    public abstract class GenericMapper<TKey,TObject> : IGenericMapper<TKey, TObject>
+
+    [Serializable]
+    public class GenericMapper<TKey,TObject> : IGenericMapper<TKey, TObject>
     {
         protected readonly IDictionary<TKey, TObject> mappings;
 

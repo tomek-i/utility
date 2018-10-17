@@ -9,7 +9,6 @@
 
 
 
-using NGenerics.DataStructures.General;
 using NUnit.Framework;
 
 namespace ExampleLibraryCSharp.DataStructures.General

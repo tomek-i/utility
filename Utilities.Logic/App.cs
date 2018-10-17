@@ -5,6 +5,8 @@ namespace TI.Utilities.Logic
 {
     public static class App
     {
+        //TODO: should make use of UnhandledException class, SingleInstance
+
         //https://stackoverflow.com/questions/9788962/how-to-get-a-dump-of-all-local-variables
 
 

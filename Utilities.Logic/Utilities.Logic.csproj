@@ -98,6 +98,7 @@
     <Compile Include="DataStructure\General\Vertex.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Patterns\Singleton\Singleton.cs" />
+    <Compile Include="Patterns\Singleton\SingletonConstructorException.cs" />
     <Compile Include="Patterns\TypeMappers\GenericMapper.cs" />
     <Compile Include="Patterns\TypeMappers\IGenericMapper.cs" />
     <Compile Include="Patterns\Query\ExpressionBuilder.cs" />

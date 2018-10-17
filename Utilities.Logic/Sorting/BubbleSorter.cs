@@ -18,13 +18,13 @@ namespace TI.Utilities.Sorting
         /// <inheritdoc />
         protected override void SortItems(IList<T> list, IComparer<T> comparer)
         {
-            for (var i = list.Count - 1; i >= 0; i--)
+            for (var iteration = list.Count - 1; iteration >= 0; iteration--)
             {
-                for (var j = 0; j < i; j++)
+                for (var currentIndex = 0; currentIndex < iteration; currentIndex++)
                 {
-                    if (comparer.Compare(list[j], list[j + 1]) > 0)
+                    if (comparer.Compare(list[currentIndex], list[currentIndex + 1]) > 0)
                     {
-                        Swap(list, j, j + 1);
+                        Swap(list, currentIndex, currentIndex + 1);
                     }
                 }
             }

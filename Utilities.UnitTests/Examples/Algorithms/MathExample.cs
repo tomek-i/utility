@@ -10,7 +10,6 @@
 
 using System;
 using System.Collections.Generic;
-using NGenerics.Algorithms;
 using NUnit.Framework;
 
 namespace ExampleLibraryCSharp.Algorithms

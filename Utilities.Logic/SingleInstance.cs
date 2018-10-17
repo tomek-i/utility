@@ -7,6 +7,7 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TI.Utilities
 {
@@ -26,11 +27,11 @@ namespace TI.Utilities
         {
             const int SW_RESTORE = 9;
 
-            [System.Runtime.InteropServices.DllImport("User32.dll")]
+            [DllImport("User32.dll")]
             private static extern bool SetForegroundWindow(IntPtr handle);
-            [System.Runtime.InteropServices.DllImport("User32.dll")]
+            [DllImport("User32.dll")]
             private static extern bool ShowWindow(IntPtr handle, int nCmdShow);
-            [System.Runtime.InteropServices.DllImport("User32.dll")]
+            [DllImport("User32.dll")]
             private static extern bool IsIconic(IntPtr handle);
 
 
@@ -61,11 +62,13 @@ namespace TI.Utilities
             const int FLASHW_TIMERNOFG = 12;
 
 
-            public static void flash(IntPtr handle, bool stop)
+            public static void Flash(IntPtr handle, bool stop)
             {
-                FLASHWINFO fw = new FLASHWINFO();
-                fw.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(FLASHWINFO)));
-                fw.hwnd = handle;
+                FLASHWINFO fw = new FLASHWINFO
+                {
+                    cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(FLASHWINFO))),
+                    hwnd = handle
+                };
 
                 if (!stop)
                     fw.dwFlags = FLASHW_ALL;
@@ -74,7 +77,7 @@ namespace TI.Utilities
                 fw.uCount = UInt32.MaxValue;
                 FlashWindowEx(ref fw);
             }
-            public static void Run(System.Windows.Forms.Form mainForm)
+            public static void Run(Form mainForm)
             {
                 try
                 {
@@ -98,10 +101,10 @@ namespace TI.Utilities
 
                         SetForegroundWindow(handle);
 
-                        flash(handle, false);
+                        Flash(handle, false);
                         Task.Delay(TimeSpan.FromSeconds(1.75)).ContinueWith((t) =>
                         {
-                            flash(handle, true);
+                            Flash(handle, true);
                         });
 
                         Thread.Sleep(3000);

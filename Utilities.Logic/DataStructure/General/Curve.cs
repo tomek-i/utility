@@ -219,16 +219,14 @@ namespace TI.Utilities.Collections.General
         /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception>
         void IList.Remove(object value)
         {
-            var association = value as Association<TKey, TValue>;
-            if (association != null)
+            if (value is Association<TKey, TValue> association)
             {
                 Remove(association);
             }
             else
             {
-                if (value is KeyValuePair<TKey, TValue>)
+                if (value is KeyValuePair<TKey, TValue> val)
                 {
-                    var val = (KeyValuePair<TKey, TValue>) value;
                     var i = IndexOf(val.Key);
                     if (i < 0)
                     {
@@ -241,7 +239,7 @@ namespace TI.Utilities.Collections.General
                 }
                 else if (value is TKey)
                 {
-                    Remove((TKey) value);
+                    Remove((TKey)value);
                 }
                 else
                 {

@@ -2,38 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TI.Utilities.Patterns.Singleton
 {
-    [Serializable]
-    internal class SingletonConstructorException : Exception
-    {
-        private Exception _exception;
-
-        public SingletonConstructorException()
-        {
-        }
-
-        public SingletonConstructorException(Exception exception)
-        {
-            this._exception = exception;
-        }
-
-        public SingletonConstructorException(string message) : base(message)
-        {
-        }
-
-        public SingletonConstructorException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected SingletonConstructorException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
-    }
 
     /// <summary>
     /// Static factory class for implementing the singleton pattern on Types

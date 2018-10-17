@@ -36,7 +36,6 @@ namespace TI.Utilities
                 return mso.ToArray();
             }
         }
-
         public static string Unzip(byte[] bytes)
         {
             using (var msi = new MemoryStream(bytes))
